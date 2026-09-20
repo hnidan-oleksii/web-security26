@@ -1,5 +1,8 @@
 # Author: Oleksii Hnidan | Project: web-security26 | File: .gitignore | Lab: 1
 target/
+.m2/
+.cache/
+.eclipse/
 .java-workspace/
 .mvn/wrapper/maven-wrapper.jar
 *.class

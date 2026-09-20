@@ -1,0 +1,21 @@
+# Author: Oleksii Hnidan | Project: web-security26 | File: compose.yaml | Lab: 1
+services:
+  app:
+    build: .
+    environment:
+      JAVA_TOOL_OPTIONS: ${WEBSEC_JAVA_TOOL_OPTIONS:-}
+    ports:
+      - "8080:8080"
+      - "127.0.0.1:5005:5005"
+
+  maven:
+    image: maven:3.9-eclipse-temurin-25
+    profiles: [tools]
+    working_dir: /workspace
+    user: "${WS_UID:-1000}:${WS_GID:-1000}"
+    environment:
+      HOME: /workspace
+      MAVEN_CONFIG: /workspace/.m2
+      MAVEN_OPTS: -Dmaven.repo.local=/workspace/.m2/repository
+    volumes:
+      - .:/workspace:Z
