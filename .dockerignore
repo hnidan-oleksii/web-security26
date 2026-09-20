@@ -1,0 +1,5 @@
+# Author: Oleksii Hnidan | Project: web-security26 | File: .dockerignore | Lab: 1
+.git
+.m2
+.java-workspace
+target
